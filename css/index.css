@@ -1,4 +1,8 @@
+body {
+  min-width: 1280px;
+}
 header {
+  position: relative;
   text-align: center;
   height: 82px;
 }
@@ -91,4 +95,128 @@ header .spot li a {
 }
 header .spot li:last-child a {
   padding-right: 0;
+}
+
+/* 슬라이딩 배너 */
+.visual {
+  position: relative;
+  padding: 0 50px;
+}
+
+.visual .prev,
+.visual .next {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 25px;
+  height: 47px;
+  transform: translateY(-50%);
+  background: url(../images/sp_com.png) no-repeat;
+  color: transparent;
+}
+.visual .prev {
+  left: 82px;
+  background-position: -128px -60px;
+}
+.visual .next {
+  right: 82px;
+  background-position: -158px -60px;
+}
+
+/* 슬라이딩 배터 컨트롤 영역 */
+.visual .control {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 55px;
+  text-align: center;
+}
+
+.visual .control > div {
+  display: inline-block;
+  position: relative;
+  /* 슬라이드의 갯수는 가변적이지만, 오른쪽의 시작/일시정지 버튼 영역은 고정된 크기이다.
+  고정된 부분을 패딩으로 처리한다. */
+  padding: 0 45px 0 0;
+}
+
+.visual .control > div > div {
+  position: absolute;
+  right: 0;
+}
+
+.visual .control > div > div a {
+  display: inline-block;
+  width: 8px;
+  height: 9px;
+  overflow: hidden;
+  background: url(../images/sp_com.png) no-repeat;
+  margin: 0 0 0 7px;
+  opacity: 1;
+}
+
+.visual .control > div > div a.on {
+  opacity: 0.5;
+}
+
+.visual .control > div > div a.play {
+  background-position: -108px -72px;
+}
+
+.visual .control > div > div a.pause {
+  background-position: -108px -60px;
+}
+
+/* =======매우 중요=======
+인라인 블록 요소는 줄바꿈시 공백이 포함됨.
+의도치 않은 공백을 제거하기 위해 폰트사이즈를 0으로 한다. */
+.visual .control ul {
+  display: inline-block;
+  font-size: 0;
+  position: relative;
+  top: -6px;
+}
+
+.visual .control li {
+  display: inline-block;
+  padding: 0 3px;
+}
+
+.visual .control ul .on a {
+  background: #000;
+}
+
+.visual .control li a {
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+}
+
+.visual .control a {
+  color: transparent;
+}
+
+.visual .con > div {
+  height: 640px;
+}
+
+.visual .con .slide {
+  background: #777 url(../images/bg_main01.jpg) no-repeat center;
+  color: #fff;
+  font-size: 32px;
+  line-height: 46px;
+}
+
+.visual .con .slide p {
+  font-size: 20px;
+  padding: 19px 0 0;
+  line-height: 100%;
+}
+
+.visual .con .slide .txt {
+  position: absolute;
+  left: 50%;
+  top: 175px;
 }
